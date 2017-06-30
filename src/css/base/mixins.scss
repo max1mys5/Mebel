@@ -1,0 +1,7 @@
+//
+// Mixins
+// --------------------------------------------------
+
+@mixin trans(){
+    transition: all 300ms ease-in-out;
+}
