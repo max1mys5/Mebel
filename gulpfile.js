@@ -5,10 +5,12 @@ var gulp = require('gulp'),
 	minifyCSS = require('gulp-clean-css'),
 	uglify = require('gulp-uglify'),
 	minify = require('gulp-minify'),
-	concat = require('gulp-concat');
+	concat = require('gulp-concat'),
+	sprite = require('gulp-sprite-generator'),
+	spritesmith = require('gulp.spritesmith');
 
-	var startFolder = 'src/',
-		finishFolder = 'dist/';
+var startFolder = 'src/',
+	finishFolder = 'dist/';
 
 
 gulp.task('connect', function() {
@@ -70,6 +72,13 @@ gulp.task('bower_styles', function() {
 		.pipe(gulp.dest(finishFolder + 'img/'));
 });
 
+gulp.task('sprite', function () {
+  var spriteData = gulp.src('./src/img/icons/*.png').pipe(spritesmith({
+    imgName: 'sprite.png',
+    cssName: 'sprite.css'
+  }));
+  return spriteData.pipe(gulp.dest(finishFolder + 'css/'));
+});
 
 gulp.task('js', function() {
 	gulp.src([
@@ -104,7 +113,7 @@ gulp.task('watch', function() {
 	gulp.watch(startFolder + 'css/**/**.*', ['sass']);
 });
 
-gulp.task('build', ['html', 'sass', 'js', 'fonts'], function() {
+gulp.task('build', ['html', 'sass', 'js', 'fonts', 'sprite'], function() {
 
 });
 gulp.task('default', ['connect', 'watch', 'build']);

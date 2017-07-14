@@ -1,27 +1,62 @@
-            .main {
-                width: 100%;
-                height: 100;
-                margin: 0;
-                padding: 0;
-            }
-            
-            .header {
-                width: 1856px;
-                height: 180px;
-                background-color: #FFFFFF;
-                &__menu1 {
-                    width: 100%;
-                    height: 70px;
-                    background-color: #F3F3F3;
-                    &-info ul {
-                        margin: 0;
-                        padding: 4px;
-                        font-size: 16px;
-                        li {
-                            display: inline;
-                            margin-right: 5px;
-                            padding: 3px;
-                                                   }
+@import '../base/variables';
+// background-color: $primery-color;
+.top-bar {
+    max-width: 1920px;
+    background-color: #f3f3f3;
+    padding: 17.5px 31px 17.5px 53px;
+    font-family: 'ProximaNovaRegular';
+    b {
+        font-family: 'ProximaNovaSemibold';
+        color: #292929;
+    }
+    li {
+        color: #636363;
+         a {
+            color: #636363;
+         }
+    }
+    &__left-menu {
+        ul {
+            li {
+                margin-right: 28px;
+                &:last-child {
+                    margin-right: 0;
+                }
+                a {
+                    color: $primery-color;
+                    .icon {
+                        margin-right: 6px;
+                    }
+                }
+            } 
+        }
+    }
+    &__contacts {
+        ul {
+            li {
+                margin-right: 42px;
+                &:last-child {
+                    margin-right: 0;
+                }
+                .icon {
+                    margin-right: 9px;
+                }
+                &:last-child {
+                    .icon {
+                        margin-right: 7px;
                     }
                 }
             }
+        }
+    }
+    &__right {
+        .call-me {
+            margin-left: 35px;
+        }
+    }
+}
+
+.bottom-bar {
+    max-width: 1920px;
+    background-color: red;
+}

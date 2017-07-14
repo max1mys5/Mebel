@@ -1,23 +1,39 @@
 //
 // Base
 // --------------------------------------------------
+@import '../base/variables';
 
 
-
-html,body{
+html,body {
 
     height: 100%;
 }
-body{
+body {
 	background: #fff;
 	text-transform: none;
 	overflow-x: hidden;
 	position: relative;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 1;
 	font-weight: 400;
 	font-family: 'Roboto', sans-serif;
 	color: #000;
 }
 
+.icon {
+  display: inline-block;
+}
 
+.list-inline {
+	& > li {
+		padding: 0;
+	}
+}
+
+.call-me {
+	background: $primery-color;
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 13px;
+	border-radius: 0;
+}
